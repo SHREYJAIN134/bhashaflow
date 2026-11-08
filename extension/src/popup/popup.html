@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BhashaFlow</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <span class="logo">B</span>
+      <div>
+        <h1>BhashaFlow</h1>
+        <p class="mode"><span class="dot"></span>Hinglish mode</p>
+      </div>
+    </div>
+    <label class="switch" title="Enable BhashaFlow">
+      <input type="checkbox" id="enabled">
+      <span class="slider"></span>
+    </label>
+  </header>
+
+  <section class="actions">
+    <label class="row langrow"><span>Translate into</span>
+      <select id="targetLanguage" aria-label="Translate into">
+        <option value="hinglish">Hinglish (Hindi, Roman script)</option>
+        <option value="tanglish">Tanglish (Tamil, Roman script)</option>
+      </select></label>
+    <p class="hint" id="selectionHint">Select text on any page, then click <strong>Translate Selection</strong> (or press Alt+Shift+T).</p>
+    <button id="translate" class="primary">Translate whole page (optional)</button>
+    <div class="runbar" id="runControls" hidden>
+      <button id="pause" class="secondary" type="button">Pause</button>
+      <button id="stop" class="secondary" type="button">Stop</button>
+    </div>
+    <button id="restore" class="secondary">Restore original English</button>
+  </section>
+
+  <p id="status" class="status" role="status">Ready</p>
+
+  <section class="prefs">
+    <h2>Preferences</h2>
+    <label class="row"><span>Translate selected text (button next to a selection)</span>
+      <span class="switch"><input type="checkbox" id="selectionMode"><span class="slider"></span></span></label>
+    <label class="row"><span>Preserve headings</span>
+      <span class="switch"><input type="checkbox" id="preserveHeadings"><span class="slider"></span></span></label>
+    <label class="row"><span>Preserve technical terms</span>
+      <span class="switch"><input type="checkbox" id="preserveTechnical"><span class="slider"></span></span></label>
+    <label class="row"><span>Preserve existing Hindi</span>
+      <span class="switch"><input type="checkbox" id="preserveHindi"><span class="slider"></span></span></label>
+    <label class="row"><span>Send page title as AI context</span>
+      <span class="switch"><input type="checkbox" id="sendPageContext"><span class="slider"></span></span></label>
+    <label class="row"><span>Remember translations on this device</span>
+      <span class="switch"><input type="checkbox" id="cacheEnabled"><span class="slider"></span></span></label>
+    <label class="row" id="dynamicRow"><span>Convert new content on <strong id="siteName">this site</strong></span>
+      <span class="switch"><input type="checkbox" id="dynamicSite"><span class="slider"></span></span></label>
+  </section>
+  <button id="clearCache" class="link" type="button">Clear saved translations</button>
+  <p id="cacheInfo" class="cacheinfo" role="status"></p>
+
+  <script src="popup.js"></script>
+</body>
+</html>
