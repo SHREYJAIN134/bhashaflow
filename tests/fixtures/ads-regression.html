@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en"><head><title>Regression: ads selected, article missed</title></head>
+<body>
+<!-- Mirrors the Chrome-reported failure: ad text is long prose, article paragraphs contain links. -->
+<div class="top-ad-wrapper"><div class="ad-leaderboard">
+  <p data-expect="keep">Shop the biggest sale of the season and enjoy free delivery on every order placed through our official website today.</p>
+  <p data-expect="keep">Our trusted partners are offering exclusive discounts that you can claim before the offer ends at midnight tonight.</p>
+</div></div>
+<div id="wrapper">
+  <div id="main-col">
+    <h1>Understanding recursion in programming</h1>
+    <div class="entry">
+      <p data-expect="convert">Recursion is a technique in which a <a href="/function">function</a> calls itself to solve a smaller version of the same problem.</p>
+      <p data-expect="convert">Every recursive function needs a <strong>base case</strong>, because without it the <a href="/stack">call stack</a> would keep growing until the program crashes.</p>
+      <div id="google_ads_iframe_/1234/_0__container__"><p data-expect="keep">Buy now and receive a complimentary gift with every purchase made during our limited time promotional event.</p></div>
+      <p data-expect="convert">A classic example is computing the <a href="/factorial">factorial</a> of a number, where <em>n</em> factorial equals n multiplied by the factorial of n minus one.</p>
+      <div class="m3 f2"><div class="cc"><small>Sponsored</small><p data-expect="keep">Discover why millions of people trust our insurance plans to protect their families and their homes every day.</p></div></div>
+      <iframe src="https://ads.example.com/frame"></iframe>
+      <p data-expect="convert">Recursive solutions are often shorter and easier to read, but they can use more memory than a simple loop that does the same work.</p>
+      <div class="taboola-widget"><p data-expect="keep">You may also like these amazing stories that other readers have been talking about all week long.</p></div>
+    </div>
+  </div>
+  <div id="side-col">
+    <div class="q1"><img src="t.jpg" alt=""><a href="/offer">Special offer</a><p data-expect="keep">Click here to claim your free trial and unlock all of the premium features for thirty full days.</p></div>
+    <div class="zz"><p data-expect="keep">This website is operated by a small team that loves writing about programming and sharing what we learn.</p></div>
+  </div>
+</div>
+</body></html>
