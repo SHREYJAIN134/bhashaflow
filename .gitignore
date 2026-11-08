@@ -1,0 +1,8 @@
+node_modules/
+extension/dist/
+benchmark/results/
+
+# Secrets: ignore every .env variant, but keep the placeholder template tracked.
+.env
+.env.*
+!.env.example

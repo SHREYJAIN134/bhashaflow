@@ -1,0 +1,20 @@
+{
+  "name": "bhashaflow",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "BhashaFlow - Hinglish rewriting Chrome extension",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "test": "node --test \"tests/unit/**/*.test.js\"",
+    "backend": "node --env-file-if-exists=.env backend/src/server.js",
+    "bench": "node --env-file-if-exists=.env scripts/bench.js",
+    "start": "node --env-file-if-exists=.env backend/src/server.js",
+    "perf": "node --env-file-if-exists=.env scripts/perf.js",
+    "test:claude-live": "node --env-file-if-exists=.env scripts/claude-live.js"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2",
+    "jsdom": "^30.1.3"
+  }
+}
